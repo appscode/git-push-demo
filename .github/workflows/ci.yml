@@ -15,14 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Run a one-line script
-        run: env | sort
-
       - name: Prepare git
         env:
           GITHUB_USER: 1gtm
           GITHUB_TOKEN: ${{ secrets.LGTM_GITHUB_TOKEN }}
         run: |
+          env | sort | grep GIT
           git config --global user.name "${GITHUB_USER}"
           git config --global user.email "${GITHUB_USER}@appscode.com"
           git remote set-url origin https://${GITHUB_USER}:${GITHUB_TOKEN}@${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
