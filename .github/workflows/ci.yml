@@ -33,4 +33,4 @@ jobs:
           date >> xyz.txt
           git add .
           git commit -a -s -m 'add all'
-          git push origin HEAD -f
+          git push origin master -f
