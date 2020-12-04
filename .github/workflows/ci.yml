@@ -23,8 +23,8 @@ jobs:
           env | sort | grep GIT
           git config --global user.name "${GITHUB_USER}"
           git config --global user.email "${GITHUB_USER}@appscode.com"
-          echo https://${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
-          git remote set-url origin https://${GITHUB_USER}:${GITHUB_TOKEN}@${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
+          echo https://github.com/${GITHUB_REPOSITORY}.git
+          git remote set-url origin https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           git remote -v
 
       - name: Push
