@@ -29,8 +29,10 @@ jobs:
 
       - name: Push
         run: |
+          git fetch origin
+          git checkout master
           touch xyz.txt
           date >> xyz.txt
           git add .
           git commit -a -s -m 'add all'
-          git push origin master -f
+          git push origin HEAD -f
